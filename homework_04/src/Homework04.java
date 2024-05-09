@@ -29,10 +29,11 @@ public class Homework04 {
         box.printInfo();
 
         box.putItem("книга");
-        box.setOpen(true);
+        box.open();
         box.putItem("книга");
 
         box.printInfo();
         box.dropItem();
+        box.close();
     }
 }
