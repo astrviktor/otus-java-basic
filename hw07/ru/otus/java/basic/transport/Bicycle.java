@@ -1,9 +1,9 @@
 package hw07.ru.otus.java.basic.transport;
 
-import hw07.ru.otus.java.basic.moveble.Moveble;
+import hw07.ru.otus.java.basic.moveable.Moveable;
 import hw07.ru.otus.java.basic.terrain.Terrain;
 
-public class Bicycle implements Moveble {
+public class Bicycle implements Moveable {
     public Bicycle() {}
 
     @Override

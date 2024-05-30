@@ -1,9 +1,9 @@
 package hw07.ru.otus.java.basic.transport;
 
-import hw07.ru.otus.java.basic.moveble.Moveble;
+import hw07.ru.otus.java.basic.moveable.Moveable;
 import hw07.ru.otus.java.basic.terrain.Terrain;
 
-public class Car implements Moveble {
+public class Car implements Moveable {
     private int gasolineAmount;
     private final int consumption;
 

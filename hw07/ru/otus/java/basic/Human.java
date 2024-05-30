@@ -1,11 +1,11 @@
 package hw07.ru.otus.java.basic;
 
-import hw07.ru.otus.java.basic.moveble.Moveble;
+import hw07.ru.otus.java.basic.moveable.Moveable;
 import hw07.ru.otus.java.basic.terrain.Terrain;
 
-public class Human  implements Moveble {
+public class Human  implements Moveable {
     private String name;
-    private Moveble currentTransport;
+    private Moveable currentTransport;
     private boolean isUseTransport;
 
     public Human(String name) {
@@ -13,7 +13,7 @@ public class Human  implements Moveble {
         isUseTransport = false;
     }
 
-    public void getInTransport(Moveble transport) {
+    public void getInTransport(Moveable transport) {
         if (!isUseTransport) {
             currentTransport = transport;
             isUseTransport = true;
