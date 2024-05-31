@@ -65,14 +65,14 @@ public class MainApp {
     }
 
     public static boolean wrongArraySize(String[][] array) {
-        int SIZE = 4;
+        int size = 4;
 
-        if (array.length != SIZE) {
+        if (array.length != size) {
             return true;
         }
 
         for (String[] element : array) {
-            if (element.length != SIZE) {
+            if (element.length != size) {
                 return true;
             }
         }
