@@ -45,6 +45,9 @@ public class MainApp {
     }
 
     public static List<String> getEmployeeNameList(List<Employee> employees) {
+        if (employees == null) {
+            return null;
+        }
         List<String> names = new ArrayList<>();
         for (Employee e : employees) {
            names.add(e.getName());
@@ -53,6 +56,9 @@ public class MainApp {
     }
 
     public static List<Employee> checkEmployeeMinAge(List<Employee> employees, int minAge) {
+        if (employees == null) {
+            return null;
+        }
         List<Employee> result = new LinkedList<>();
         for (Employee e : employees) {
             if (e.getAge() >= minAge) {
@@ -63,6 +69,12 @@ public class MainApp {
     }
 
     public static boolean checkEmployeeAverageAge(List<Employee> employees, int averageAge) {
+        if (employees == null) {
+            return false;
+        }
+        if (employees.isEmpty()) {
+            return false;
+        }
         int sumAge = 0;
         for (Employee e : employees) {
             sumAge += e.getAge();
@@ -72,6 +84,12 @@ public class MainApp {
     }
 
     public static Employee findYoungestEmployee(List<Employee> employees) {
+        if (employees == null) {
+            return null;
+        }
+        if (employees.isEmpty()) {
+            return null;
+        }
         Employee result = employees.get(0);
         for (Employee e : employees) {
             if (e.getAge() < result.getAge()) {
@@ -90,6 +108,9 @@ public class MainApp {
     }
 
     public static int sumArrayListElemMoreThan5(List<Integer> array) {
+        if (array == null) {
+            return -1;
+        }
         int sum = 0;
         for (Integer elem : array) {
             if (elem > 5) {
@@ -100,10 +121,16 @@ public class MainApp {
     }
 
     public static void setNumberToArrayListElems(List<Integer> array, int number) {
+        if (array == null) {
+            return;
+        }
         array.replaceAll(integer -> number);
     }
 
     public static void addNumberToArrayListElems(List<Integer> array, int number) {
+        if (array == null) {
+            return;
+        }
         for (int i = 0; i < array.size(); i++) {
             array.set(i, array.get(i) + number);
         }
