@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
-        ArrayList<Integer> list = createArrayListBetweenMinMax(1,10);
+        List<Integer> list = createArrayListBetweenMinMax(1,10);
         System.out.println(list);
 
         int sum = sumArrayListElemMoreThan5(list);
@@ -29,7 +29,7 @@ public class MainApp {
                 new Employee("Сотрудник 5", 45)
         ));
 
-        ArrayList<String> namesList = getEmployeeNameList(employeeList);
+        List<String> namesList = getEmployeeNameList(employeeList);
         System.out.println("Имена сотрудников: " + namesList);
 
         int minAge = 25;
@@ -44,8 +44,8 @@ public class MainApp {
         System.out.println("Самый молодой: " + youngest);
     }
 
-    public static ArrayList<String> getEmployeeNameList(List<Employee> employees) {
-        ArrayList<String> names = new ArrayList<>();
+    public static List<String> getEmployeeNameList(List<Employee> employees) {
+        List<String> names = new ArrayList<>();
         for (Employee e : employees) {
            names.add(e.getName());
         }
@@ -81,15 +81,15 @@ public class MainApp {
         return result;
     }
 
-    public static ArrayList<Integer> createArrayListBetweenMinMax(int min, int max) {
-        ArrayList<Integer> list = new ArrayList<>();
+    public static List<Integer> createArrayListBetweenMinMax(int min, int max) {
+        List<Integer> list = new ArrayList<>();
         for (int n = min; n <= max; n++) {
             list.add(n);
         }
         return list;
     }
 
-    public static int sumArrayListElemMoreThan5(ArrayList<Integer> array) {
+    public static int sumArrayListElemMoreThan5(List<Integer> array) {
         int sum = 0;
         for (Integer elem : array) {
             if (elem > 5) {
@@ -99,11 +99,11 @@ public class MainApp {
         return sum;
     }
 
-    public static void setNumberToArrayListElems(ArrayList<Integer> array, int number) {
+    public static void setNumberToArrayListElems(List<Integer> array, int number) {
         array.replaceAll(integer -> number);
     }
 
-    public static void addNumberToArrayListElems(ArrayList<Integer> array, int number) {
+    public static void addNumberToArrayListElems(List<Integer> array, int number) {
         for (int i = 0; i < array.size(); i++) {
             array.set(i, array.get(i) + number);
         }
