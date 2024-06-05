@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public class PhoneBook {
-    Map<String, String> data;
+    private Map<String, String> data;
 
     public PhoneBook() {
-        data = new HashMap<String, String>();
+        data = new HashMap<>();
     }
 
     public void add(String name, String phone) {
