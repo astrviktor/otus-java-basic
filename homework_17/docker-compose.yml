@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16.3
+    container_name: postgres
+    hostname: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  dbeaver:
+    image: dbeaver/cloudbeaver:24
+    container_name: dbeaver
+    hostname: dbeaver
+    restart: always
+    ports:
+      - "8080:8978"
