@@ -1,13 +1,13 @@
 package hw19.ru.otus.java.basic.fruit;
 
 public class Fruit {
-    private int weight;
+    private final double weight;
 
-    public Fruit(int weight) {
+    public Fruit(double weight) {
         this.weight = weight;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 }

@@ -2,7 +2,6 @@ package hw19.ru.otus.java.basic.fruit;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 public class Box<T extends Fruit> {
@@ -20,16 +19,16 @@ public class Box<T extends Fruit> {
         fruits.addAll(Arrays.asList(fruit));
     }
 
-    public int weight() {
-        int weight = 0;
+    public double weight() {
+        double weight = 0.0;
         for (T fruit : fruits) {
             weight+=fruit.getWeight();
         }
         return weight;
     }
 
-    public boolean compare(Box other) {
-        return this.weight() == other.weight();
+    public boolean compare(Box<?> other) {
+        return Math.abs(this.weight() - other.weight()) < 0.0001;
     }
 
     public void clear() {
@@ -37,9 +36,18 @@ public class Box<T extends Fruit> {
     }
 
     public void pour(Box<? extends T> other) {
-        List fruits = other.getFruits();
-        other.clear();
+        if (this == other) {
+            System.out.println("Нельзя переложить коробку саму в себя");
+            return;
+        }
 
+        List fruits = other.getFruits();
+        if (fruits == null || fruits.isEmpty()) {
+            System.out.println("Поступившая коробка пуста");
+            return;
+        }
+
+        other.clear();
         for (Object fruit : fruits) {
             this.fruits.add((T) fruit);
         }

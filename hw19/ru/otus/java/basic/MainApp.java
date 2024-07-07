@@ -38,5 +38,11 @@ public class MainApp {
 
         // appleBox.pour(box); // ошибка по ограничению
 
+        System.out.println("=====");
+
+        Box<Apple> emptyAppleBox = new Box<>();
+        Box<Fruit> emptyFruitBox = new Box<>();
+        emptyAppleBox.pour(emptyAppleBox);
+        emptyFruitBox.pour(emptyAppleBox);
     }
 }
