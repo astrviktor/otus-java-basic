@@ -1,7 +1,7 @@
 package hw21.ru.otus.java.basic;
 
 public class WaitNotifySimpleApp {
-    private class Counter {
+    private static class Counter {
         private char value;
 
         public Counter(char value) {
@@ -9,22 +9,12 @@ public class WaitNotifySimpleApp {
         }
 
         public void next() {
-            switch (value) {
-                case 'A':
-                    value = 'B';
-                    break;
-                case 'B':
-                    value = 'C';
-                    break;
-                case 'C':
-                    value = 'A';
-                    break;
-            }
+            value = (char) ((value - 'A' + 1) % 3 + 'A');
         }
     }
 
     private final Object mon = new Object();
-    private Counter counter = new Counter('A');
+    private final Counter counter = new Counter('A');
     private static final int WORK_COUNT = 5;
 
     public void printSymbol(char symbol) {
@@ -39,7 +29,7 @@ public class WaitNotifySimpleApp {
                     mon.notifyAll();
                 }
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
             }
         }
     }
